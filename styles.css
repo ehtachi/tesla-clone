@@ -196,6 +196,10 @@ section {
   margin-top: 13vh;
 }
 
+.point {
+  cursor: pointer;
+}
+
 .car-info h2 {
   font-size: 1.8rem;
 }
@@ -224,6 +228,7 @@ section {
   font-size: 0.9rem;
   border: none;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 .buttons button:first-child {
@@ -320,7 +325,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1360px) {
   .large-scrn {
     display: flex;
     justify-content: center;
@@ -340,6 +345,7 @@ section {
   }
 
   .navbar {
+    padding: 1rem 3rem;
     /* border: 2px solid red; */
     justify-content: space-between;
   }
@@ -365,5 +371,9 @@ section {
 
   .lalala {
     display: none !important;
+  }
+
+  .tesla-logo {
+    width: 6.5rem;
   }
 }
