@@ -1,264 +1,369 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.container{
-    height: 100vh;
+.container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.large-scrn {
+  /* border: 2px solid red; */
+  min-width: 40rem;
+  display: none;
+  /* padding: 0.5rem; */
+}
+
+.large-scrn ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.second {
+  background-image: url(./images/mobile/Homepage-ModelY-LHD-Mobile.jpeg);
+  background-position: center;
+}
+
+.fourth {
+  background-position: center;
+  background-image: url(./images/mobile/Homepage-Model-X-LHD-Mobile.jpeg);
+}
+
+.third {
+  background-image: url(./images/mobile/Homepage-Model-S-LHD-Mobile.jpeg);
+}
+
+.first {
+  background-image: url(./images/mobile/Homepage-Model-3-LHD-Mobile.jpeg);
+}
+
+.fifth {
+  background-image: url(./images/mobile/Homepage-SolarPanels-Mobile.webp);
+}
+
+.sixth {
+  background-image: url(./images/Homepage-SolarRoof-Desktop-Global.webp);
+}
+
+.seventh {
+  background-image: url(./images/dd739764-bcaa-4263-9488-8c73bc9fb046.jpeg);
+}
+
+.navbar {
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  min-height: 5rem;
+  padding: 1.5rem;
+  /* border: 2px solid red; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  position: absolute;
+  right: 1rem;
+  color: black;
+  /* border: 2px solid red; */
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.tesla-logo {
+  width: 5rem;
+}
+
+.navbar {
+  z-index: 1;
+}
+
+.nav-list {
+  font-size: 1.2rem;
+  width: 70vw;
+  background-color: white;
+  /* border: 2px solid green; */
+  list-style: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem 1.5rem 2rem 1.5rem;
+  overflow-y: auto;
+  transition: all 0.4s;
+  /* z-index: 2222; */
+}
+
+.nav-list li {
+  font-size: 1rem;
+  padding: 0.6rem;
+  width: 100%;
+  display: block;
+  /* font-weight: 600; */
+  margin-bottom: 0.5rem;
+  transition: 0.4s all;
+}
+
+.nav-list li:last-child {
+  margin-bottom: 30rem;
+}
+
+.nav-list li:hover {
+  background-color: rgb(182, 180, 180);
+  border-radius: 0.3rem;
+  color: white;
+}
+
+.close {
+  position: absolute;
+  right: 1.6rem;
+  top: 2rem;
+  width: 1.6rem;
+  /* border: 2px solid red; */
+}
+
+.bg-img {
+  width: 100%;
+  height: 100vh;
+  /* filter: blur(8px); */
+  position: absolute;
+  top: 0;
+  /* z-index: -1; */
+}
+
+.shadow {
+  /* border: 2px solid red; */
+  background-color: black;
+  width: 30vw;
+  position: absolute;
+  min-height: 100vh;
+  opacity: 0.5;
+  transition: all 0.4s;
+  z-index: 1;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.hide2 {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.content {
+  /* padding-top: calc(15vmax + 0.5rem); */
+  /* padding-top: calc(5rem+5vh); */
+  padding-bottom: 2rem;
+  /* border: 2px solid red; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.car-info {
+  min-height: 3rem;
+  /* border: 2px solid blue; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 13vh;
+}
+
+.car-info h2 {
+  font-size: 1.8rem;
+}
+
+.car-info p {
+  font-size: 0.8rem;
+}
+
+.buttons {
+  padding: 0 1.5rem;
+  /* border: 2px solid green; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 5rem;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 2rem;
+}
+
+.buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.buttons button:first-child {
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+  padding: 0.5rem;
+}
+
+.buttons button:nth-child(2n) {
+  background-color: white;
+  opacity: 0.7;
+  color: rgb(88, 88, 88);
+  padding: 0.5rem;
+}
+
+.e,
+.f {
+  display: none;
+}
+
+@media screen and (max-height: 400px) {
+  section {
+    /* border: 2px solid pink; */
+    min-height: 30rem;
+  }
+
+  .container {
+    min-height: 500px;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-}
-
-section{
-    height: 100vh;
-    scroll-snap-align: start;
-}
-
-.bg{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.second{
-    background-image: url(./images/mobile/Homepage-ModelY-LHD-Mobile.jpeg);
-    background-position: center;
-}
-
-.fourth{
-    background-position: center;
-    background-image: url(./images/mobile/Homepage-Model-X-LHD-Mobile.jpeg);
-}
-
-.third{
-    background-image: url(./images/mobile/Homepage-Model-S-LHD-Mobile.jpeg);
-}
-
-.first{
-    background-image: url(./images/mobile/Homepage-Model-3-LHD-Mobile.jpeg);
-}
-
-.fifth{
-    background-image: url(./images/mobile/Homepage-SolarPanels-Mobile.webp);
-}
-
-.sixth{
-    background-image: url(./images/Homepage-SolarRoof-Desktop-Global.webp);
-}
-
-.seventh{
-    background-image: url(./images/dd739764-bcaa-4263-9488-8c73bc9fb046.jpeg);
-}
-
-.navbar{
-    width: 100vw;
-    position: fixed;
-    display: flex;
-    min-height: 5rem;
-    padding: 1.5rem;
-    /* border: 2px solid red; */
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu{
-    position: absolute;
-    right: 1rem;
-    color: black;
-    /* border: 2px solid red; */
-    font-size: 1rem;
-    padding: 0.5rem;
-}
-
-.tesla-logo{
-    width: 5rem;
-}
-
-.navbar{
-    z-index: 1;
-}
-
-.nav-list{
-    font-size: 1.2rem;
-    width: 70vw;
-    background-color: white;
-    /* border: 2px solid green; */
-    list-style: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 5rem 1.5rem 2rem 1.5rem;
+    scroll-snap-type: none;
     overflow-y: auto;
-    transition: all 0.4s;
-    /* z-index: 2222; */
+  }
+
+  .car-info {
+    margin-top: 4rem;
+  }
+
+  .bg {
+    background-position: center;
+  }
 }
 
-.nav-list li{
-    font-size: 1rem;
-    padding: 0.6rem;
-    width: 100%;
-    display: block;
-    /* font-weight: 600; */
-    margin-bottom: 0.5rem;
-    transition: 0.4s all;
-}
-
-.nav-list li:last-child{
-    margin-bottom: 30rem;
-}
-
-.nav-list li:hover{
-    background-color: rgb(182, 180, 180);
-    border-radius: 0.3rem;
-    color: white;
-}
-
-.close{
-    position: absolute;
-    right: 1.6rem;
-    top: 2rem;
-    width: 1.6rem;
-    /* border: 2px solid red; */
-}
-
-.bg-img{
-    width: 100%;
+@media screen and (min-width: 650px) {
+  section {
     height: 100vh;
-    /* filter: blur(8px); */
-    position: absolute;
-    top: 0;
-    /* z-index: -1; */
-}
+  }
+  .first {
+    background-image: url(./images/Homepage-Model-3-Desktop-LHD.jpeg);
+  }
+  .second {
+    background-image: url(./images/Homepage-Model-Y-Global-Desktop.jpeg);
+  }
+  .third {
+    background-image: url(./images/Homepage-Model-S-Desktop-LHD.jpeg);
+  }
+  .fourth {
+    background-image: url(./images/Homepage-Model-X-Desktop-LHD.jpeg);
+  }
+  .fifth {
+    background-image: url(./images/_25-HP-SolarPanels-D.jpeg);
+  }
 
-.shadow{
-    /* border: 2px solid red; */
-    background-color: black;
-    width: 30vw;
-    position: absolute;
-    min-height: 100vh;
-    opacity: 0.5;
-    transition: all 0.4s;
-    z-index: 1;
-}
+  .nav-list {
+    width: 40vw;
+  }
 
-.hide{
-    opacity: 0;
-    transform: translateX(100%);
-}
+  .shadow {
+    width: 60vw;
+  }
 
-.hide2{
-    opacity: 0;
-    transform: translateX(-100%);
-}
+  .car-info h2 {
+    font-size: 2rem;
+  }
 
-.content{
-    padding-top: 13vh;
-    padding-bottom: 2rem;
-    /* border: 2px solid red; */
-    height: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
+  .car-info p {
+    font-size: 1rem;
+  }
 
-.car-info{
-    height: 3rem;
-    /* border: 2px solid blue; */
+  .buttons {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    max-width: 700px;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
+  }
+
+  .buttons button {
+    width: 45%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
 }
 
-.car-info h2{
-    font-size: 1.5rem;
-}
-
-.car-info p{
-    font-size: 0.7rem;
-}
-
-.nana{
-    height: 80%;
-    justify-content: space-between;
-    padding-bottom: 4rem;
-    padding-top: 8rem;
-}
-
-.buttons{
-    padding: 0 1.5rem;
-    /* border: 2px solid green; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 5rem;
-    justify-content: space-around;
-}
-
-.buttons button{
+@media screen and (min-width: 1200px) {
+  .large-scrn {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1.8rem;
-    font-size: 0.9rem;
-    border: none;
-    border-radius: 0.2rem;
-}
+    /* border: 2px solid orange; */
+    /* display: none; */
+    margin: auto;
+  }
 
-.buttons button:first-child{
-    background-color: black;
-    opacity: 0.7;
-    color: white;
-    padding: 0.5rem;
-}
+  .models {
+    /* display: none; */
+    /* border: 2px solid green; */
+    width: 43rem;
+    margin: 0 auto;
+    /* padding: 0 1rem 0 1rem; */
+    /* gap: 1rem; */
+  }
 
-.buttons button:nth-child(2n){
-    background-color: white;
-    opacity: 0.7;
-    color: rgb(88, 88, 88);
-    padding: 0.5rem;
-}
+  .navbar {
+    /* border: 2px solid red; */
+    justify-content: space-between;
+  }
 
-@media screen and (min-width: 610px) {
-    section{
-        height: 100vh;
-    }
-    .first{
-        background-image: url(./images/Homepage-Model-3-Desktop-LHD.jpeg);
-    }
-    .second{
-        background-image: url(./images/Homepage-Model-Y-Global-Desktop.jpeg);
-    }
-    .third{
-        background-image: url(./images/Homepage-Model-S-Desktop-LHD.jpeg);
-    }
-    .fourth{
-        background-image: url(./images/Homepage-Model-X-Desktop-LHD.jpeg);
-    }
-    .fifth{
-        background-image: url(./images/_25-HP-SolarPanels-D.jpeg);
-    }
-    .nav-list{
-        width: 40vw;
-    }
-    .shadow{
-        width: 60vw;
-    }
+  h2 {
+    font-size: 1rem;
+  }
 
-    .car-info h2{
-        font-size: 2.5rem;
-    }
-    
-    .car-info p{
-        font-size: 1rem;
-    }
+  .e,
+  .f {
+    display: block;
+  }
+
+  .e {
+    position: absolute;
+    right: 12rem;
+  }
+
+  .f {
+    position: absolute;
+    right: 6rem;
+  }
+
+  .lalala {
+    display: none !important;
+  }
 }
