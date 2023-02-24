@@ -217,7 +217,7 @@ section {
   height: 5rem;
   justify-content: space-around;
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 7vh;
 }
 
 .buttons button {
